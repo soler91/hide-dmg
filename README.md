@@ -2,6 +2,6 @@
 
 Hides damage numbers, might make game faster.
 
-Toggle
+Toggle (It's on by default)
 
 /8 dmg

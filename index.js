@@ -9,7 +9,7 @@ module.exports = function defs(dispatch) {
         command.message(`Hide damage: ${enabled}`);
     });
     
-    dispatch.hook('S_EACH_SKILL_RESULT', dispatch.base.majorPatchVersion < 74 ? 7 : 9, {order: 10000}, event => { 
+    dispatch.hook('S_EACH_SKILL_RESULT', 12, {order: 10000}, event => { 
         if(enabled){
             if(event.type != 0){
                 event.type = 0;

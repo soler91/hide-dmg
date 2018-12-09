@@ -1,15 +1,12 @@
-const    Command = require('command')
-
-module.exports = function defs(dispatch) {
-    const command = Command(dispatch);
+module.exports = function defs(mod) {
     
     let enabled = true;
-    command.add('dmg', () => {
+    mod.command.add('dmg', () => {
         enabled = !enabled;
-        command.message(`Hide damage: ${enabled}`);
+        mod.command.message(`Hide damage: ${enabled}`);
     });
     
-    dispatch.hook('S_EACH_SKILL_RESULT', 12, {order: 10000}, event => { 
+    mod.hook('S_EACH_SKILL_RESULT', 12, {order: 10000}, event => { 
         if(enabled){
             if(event.type != 0){
                 event.type = 0;

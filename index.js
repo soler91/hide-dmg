@@ -6,7 +6,7 @@ module.exports = function defs(mod) {
         mod.command.message(`Hide damage: ${enabled}`);
     });
     
-    mod.hook('S_EACH_SKILL_RESULT', 12, {order: 10000}, event => { 
+    mod.hook('S_EACH_SKILL_RESULT', 13, {order: 10000}, event => { 
         if(enabled){
             if(event.type != 0){
                 event.type = 0;
